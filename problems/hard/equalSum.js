@@ -2,10 +2,19 @@
 // Given an array of numbers, find all pair of numbers whose sum is equal to a given number
 // eg. 1,2,3,4,5,6 and 6 -> [[2, 4], [1, 5]]
 export const equalSum = (xs, n) => {
-	console.log(xs)
-	console.log(n)
-	// Your code here...
-	return []
+	const response = []
+
+	for (let i = 0; i < xs.length; i++) {
+		if (typeof xs[i] != 'number') return null
+
+		for (let j = i + 1; j < xs.length; j++) {
+			if (xs[i] + xs[j] === n) {
+				response.push([xs[i], xs[j]])
+			}
+		}
+	}
+
+	return response
 }
 
 const tests = [
